@@ -1,11 +1,21 @@
 import ReactDOM from "react-dom/client";
 
 // add the green inside this function
-const Alert = () => {
-
-
+const Alert = (props) => {
+if (props.color === 'green') {
+	return (<div class="alert alert-success" role="alert">
+ {props.text}
+</div>);
+}
+else if (props.color === 'orange') {
+	return (<div class="alert alert-warning" role="alert">
+ {props.text} </div>);
+}
+ else if (props.color === 'red') {
+	return (<div class="alert alert-danger" role="alert">
+ {props.text} </div>)
 };
-
+};
 // here is where the alert component is being used, you don't have to edit this part,
 // but it helps you understan what properties is the component using
 const root = ReactDOM.createRoot(document.getElementById('root'));
